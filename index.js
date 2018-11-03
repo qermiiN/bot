@@ -3,6 +3,7 @@
     let snekfetch = require("snekfetch")
     const  bot = new Discord.Client();
     const config = require("./config.json");
+    const token = process.env.token;
     const fs = require("fs")
     bot.commands = new Discord.Collection();
 fs.readdir("./commands/", (err, files) => {
@@ -91,4 +92,4 @@ if(commandfile) commandfile.run(bot,message,args);
     }
 });
 //});
-bot.login(config.token);
+bot.login(token);
